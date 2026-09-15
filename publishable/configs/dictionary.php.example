@@ -1,0 +1,15 @@
+<?php
+
+return [
+    'ids' => [],
+
+    'lang' => [
+        'documents_list' => 'Список елементів',
+        'create_child' => 'Додати елемент',
+    ],
+
+    'actions' => [
+        'delete',
+        'restore',
+    ],
+];

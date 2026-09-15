@@ -1,0 +1,17 @@
+{
+    "name": "jevo/jdirectory",
+    "description": "Directory module for Evolution CMS 3.5.8",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Jevo\\JDirectory\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jevo\\JDirectory\\JDirectoryServiceProvider"
+            ]
+        }
+    }
+}
