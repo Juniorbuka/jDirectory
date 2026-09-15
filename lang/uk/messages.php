@@ -1,7 +1,7 @@
 <?php
 
     return [
-        'main_caption' => 'Список документів',
+    'main_caption' => 'Список документів',
     'edit_document' => 'Редагувати документ',
     'documents_list' => 'Список документів',
     'refresh' => 'Оновити',
