@@ -5,6 +5,7 @@
 #### Встановлення
 
 ```bash
+cd ~/public_html/core
 php -d="memory_limit=-1" artisan package:installrequire jevo/jdirectory "^1.0"
 php artisan vendor:publish --provider="Jevo\JDirectory\JDirectoryServiceProvider"
 ```
