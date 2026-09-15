@@ -1,8 +1,11 @@
 {
     "name": "jevo/jdirectory",
-    "description": "Directory module for Evolution CMS 3.5.8",
+    "description": "Directory module for Evolution CMS >= 3.5.7",
     "type": "library",
     "license": "MIT",
+    "require": {
+        "evolution-cms/evolution": "^3.5.7"
+    },
     "autoload": {
         "psr-4": {
             "Jevo\\JDirectory\\": "src/"

@@ -16,7 +16,7 @@ class Controller
         ]);
     }
 
-    public function show(JDirectory $directory, SiteContent $container, SiteContent $folder = null)
+    public function show(JDirectory $directory, SiteContent $container, ?SiteContent $folder = null)
     {
         if ($container->id) {
             $config  = $directory->getConfig($container->id);

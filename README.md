@@ -1,6 +1,6 @@
 ### jDirectory - відображення ресурсів у вигляді таблиці замість дерева
 
-<img src="https://img.shields.io/badge/PHP-%3E=7.3-green.svg?php=7.3"> <img src="https://img.shields.io/badge/EVO-%3E%3D3.5.8-green">
+<img src="https://img.shields.io/badge/EVO-%3E%3D3.5.7-green">
 
 #### Встановлення
 
