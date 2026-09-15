@@ -1,59 +1,58 @@
 <?php
 
-return [
-    /**
-     * список ідентифікаторів ресурсів
-     */
-    'ids' => [],
+    return [
+        /**
+        * список ідентифікаторів ресурсів
+        */
+        'ids' => [],
 
-    'lang' => [
-        'documents_list' => 'Список товарів',
+        'lang' => [
+            'documents_list' => 'Список товарів',
         'create_child' => 'Додати товар',
-    ],
-
-    'columns' => [
-        'image' => [
-            /**
-             * назва колонки
-             */
-            'caption' => '',
-
-            'filterable' => false,
-
-            /**
-             * функція рендерингу комірки
-             *
-             * string      $value  значення поля
-             * SiteContent $row    рядок із таблиці site_content
-             * array       $config цей масив конфігурації
-             */
-            'renderer' => function($value, $row, $config) {
-                if (!$row->isfolder) {
-                    return '<img src="' . MODX_BASE_URL . \Helper::phpThumb($value, 'w=32,h=32,f=jpg') . '">';
-                }
-            },
-
-            /**
-             * за замовчуванням колонки сортуються за порядком,
-             * але для кожної колонки його можна змінити.
-             * у цьому випадку колонка стане перед колонкою з назвою
-             */
-            'sort'  => -1,
-
-            /**
-             * атрибути комірки таблиці
-             */
-            'attrs' => 'style="width: calc(32px + 1.1rem);"',
-
-            /**
-             * назви класів комірки таблиці
-             */
-            'class' => 'text-center',
         ],
+
+        'columns' => [
+            'image' => [
+                /**
+                * назва колонки
+                */
+                'caption' => '',
+
+        'filterable' => false,
+
+        /**
+        * функція рендерингу комірки
+        *
+        * string      $value  значення поля
+        * SiteContent $row    рядок із таблиці site_content
+        * array       $config цей масив конфігурації
+        */
+        'renderer' => function($value, $row, $config) {
+            if (!$row->isfolder) {
+                return '<img src="' . MODX_BASE_URL . \Helper::phpThumb($value, 'w=32,h=32,f=jpg') . '">';
+            }
+        },
+
+        /**
+        * за замовчуванням колонки сортуються за порядком,
+        * але для кожної колонки його можна змінити.
+        * у цьому випадку колонка стане перед колонкою з назвою
+        */
+        'sort'  => -1,
+
+        /**
+        * атрибути комірки таблиці
+        */
+        'attrs' => 'style="width: calc(32px + 1.1rem);"',
+
+        /**
+        * назви класів комірки таблиці
+        */
+        'class' => 'text-center',
+            ],
 
         'price' => [
             'caption' => 'Ціна',
-            'class' => 'text-center',
+        'class' => 'text-center',
         ],
     ],
-];

@@ -1,10 +1,14 @@
 {
     "name": "jevo/jdirectory",
     "description": "Directory module for Evolution CMS 3.5.8",
+    "type": "library",
     "license": "MIT",
+    "require": {
+        "php": ">=7.3"
+    },
     "autoload": {
         "psr-4": {
-            "Jevo\\JDirectory\\": "src"
+            "Jevo\\JDirectory\\": "src/"
         }
     },
     "extra": {
@@ -13,5 +17,9 @@
                 "Jevo\\JDirectory\\JDirectoryServiceProvider"
             ]
         }
+    },
+    "support": {
+        "issues": "https://github.com/Juniorbuka/jDirectory/issues",
+        "source": "https://github.com/Juniorbuka/jDirectory"
     }
 }
