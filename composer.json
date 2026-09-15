@@ -3,9 +3,6 @@
     "description": "Directory module for Evolution CMS 3.5.8",
     "type": "library",
     "license": "MIT",
-    "require": {
-        "php": ">=7.3"
-    },
     "autoload": {
         "psr-4": {
             "Jevo\\JDirectory\\": "src/"
