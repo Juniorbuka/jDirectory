@@ -1,3 +1,4 @@
+
 ### jDirectory - відображення ресурсів у вигляді таблиці замість дерева
 
 <img src="https://img.shields.io/badge/EVO-%3E%3D3.5.7-green">
@@ -16,4 +17,4 @@ php artisan vendor:publish --provider="Jevo\JDirectory\JDirectoryServiceProvider
 core/custom/directory
 ```
 
-![jDirectory](https://user-images.githubusercontent.com/8789957/121332218-181bfd00-c931-11eb-8144-f411ab5f2321.png)
+<img width="1461" height="794" alt="20260922_143738" src="https://github.com/user-attachments/assets/bc2df91a-9712-4b4c-9ab5-04e0e962cce2" />
