@@ -96,3 +96,13 @@ html, body {
 .darkness .directory-page .crumbs {
     background: #202329;
 }
+.directory-page svg {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.125em;
+}
+
+.directory-list .pagetitle-column svg {
+    margin-right: 0.25rem;
+}
