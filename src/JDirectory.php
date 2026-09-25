@@ -234,9 +234,9 @@ class JDirectory
             ],
 
             'tree_config' => [
-                'icon'              => '<i class="fa fa-list-alt"></i>',
-                'icon_folder_open'  => "<i class='fa fa-list-alt'></i>",
-                'icon_folder_close' => "<i class='fa fa-list-alt'></i>",
+                'icon'              => svg('tabler-list')->toHtml(),
+                'icon_folder_open'  => svg('tabler-list')->toHtml(),
+                'icon_folder_close' => svg('tabler-list')->toHtml(),
             ],
 
             'columns' => [
@@ -246,12 +246,12 @@ class JDirectory
                     'renderer' => function($value, $row, $config) {
                         if ($row->isfolder) {
                             return '
-                                <i class="fa fa-folder"></i>
+                                ' . svg('tabler-folder')->toHtml() . '
                                 <a href="' . route('directory::show', ['container' => $config['id'], 'folder' => $row->id]) . '">' . $row->pagetitle . '</a>
                             ';
                         } else {
                             return '
-                                <i class="fa fa-file-o"></i>
+                                ' . svg('tabler-file')->toHtml() . '
                                 <a href="index.php?a=27&id=' . $row->id . '" title="' . $config['lang']['edit_document'] . '" target="main">' . $row->pagetitle . '</a>
                             ';
                         }
