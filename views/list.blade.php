@@ -6,20 +6,20 @@
     <div id="actions">
         <div class="btn-group">
             <a class="btn btn-success" href="index.php?a=4&pid={{ $container->id }}">
-                <i class="fa fa-file-o"></i><span>{{ $lang['create_child'] }}</span>
+                {!! svg('tabler-file')->toHtml() !!}<span>{{ $lang['create_child'] }}</span>
             </a>
 
             @if (request()->has('filter'))
                 <a href="javascript:;" class="btn btn-secondary" onclick="location = location.pathname;">
-                    <i class="fa fa-times-circle"></i><span>@lang('directory::messages.reset_filters')</span>
+                    {!! svg('tabler-circle-x')->toHtml() !!}<span>@lang('directory::messages.reset_filters')</span>
                 </a>
             @endif
 
             <a href="javascript:;" class="btn btn-secondary" onclick="location.reload();">
-                <i class="fa fa-refresh"></i><span>@lang('directory::messages.refresh')</span>
+                {!! svg('tabler-refresh')->toHtml() !!}<span>@lang('directory::messages.refresh')</span>
             </a>
             <a class="btn btn-secondary" href="index.php?a=27&id={{ $container->id }}">
-                <i class="fa fa-pencil"></i><span>{{ $lang['edit_document'] }}</span>
+                {!! svg('tabler-pencil')->toHtml() !!}<span>{{ $lang['edit_document'] }}</span>
             </a>
         </div>
     </div>
@@ -37,7 +37,7 @@
                         <li class="crumb">
                             <a href="{{ route('directory::show', ['container' => $config['id'], 'folder' => $crumb->id != $container->id ? $crumb->id : null]) }}">
                                 @if ($loop->first)
-                                    <i class="fa fa-home"></i>
+                                    {!! svg('tabler-home')->toHtml() !!}
                                 @else
                                     {{ $crumb->pagetitle }}
                                 @endif
@@ -87,7 +87,7 @@
                                 @foreach ($config['columns'] as $key => $column)
                                     <td class="{{ $key }}-column {{ $column['class'] ?? '' }}" {!! $column['attrs'] ?? '' !!}>
                                         @if ($key == 'pagetitle')
-                                            <i class="fa fa-level-up"></i>
+                                            {!! svg('tabler-arrow-up')->toHtml() !!}
                                             <a href="{{ route('directory::show', ['container' => $config['id'], 'folder' => $folder->parent != $container->id ? $folder->parent : null]) }}">
                                                 ...
                                             </a>
@@ -98,7 +98,7 @@
                         @endif
 
                         <tr>
-                            <td colspan="2"><button type="submit" style="width:100%"><i class="fas fa-search" title="Применить фильтр"></i></td>
+                            <td colspan="2"><button type="submit" style="width:100%">{!! svg('tabler-search')->toHtml() !!}</td>
                             @foreach ($config['columns'] as $key => $column)
                                 <td class="{{ $key }}-column {{ $column['class'] ?? '' }}" {!! $column['attrs'] ?? '' !!}>
                                     @if (!isset($column['filterable']) || $column['filterable'] != false)
@@ -112,7 +112,7 @@
                         @forelse ($items as $item)
                             <tr class="{{ $item->deleted ? 'item-deleted' : ''}} {{ !$item->published ? 'item-unpublished' : ''}} {{ $item->hidemenu ? 'item-hidden' : ''}}" data-published="{{ $item->published }}" data-deleted="{{ $item->deleted }}" data-isfolder="{{ $item->isfolder }}" id="node{{ $item->id }}">
                                 <td data-published="{{ $item->published }}" data-deleted="{{ $item->deleted }}" data-isfolder="{{ $item->isfolder }}" data-href="@makeUrl($item->id)"><input type="checkbox" name="selected[]" value="{{ $item->id }}"></td>
-                                <td class="toggle-item-menu" onclick='directory.showMenu(event, {{ $item->id }}, "{{ htmlentities($item->pagetitle) }}");' oncontextmenu="this.onclick(event); return false;"><span class="fa fa-bars"></span></td>
+                                <td class="toggle-item-menu" onclick='directory.showMenu(event, {{ $item->id }}, "{{ htmlentities($item->pagetitle) }}");' oncontextmenu="this.onclick(event); return false;">{!! svg('tabler-menu-2')->toHtml() !!}</td>
 
                                 @foreach ($config['columns'] as $key => $column)
                                     <td class="{{ $key }}-column {{ $column['class'] ?? '' }}" {!! $column['attrs'] ?? '' !!}>
@@ -197,35 +197,35 @@
 
         @if (evo()->hasPermission('new_document'))
             <div class="menuLink" id="item3" onclick="directory.menuHandler(3);">
-                <i class="fa fa-file-o"></i>
+                {!! svg('tabler-file')->toHtml() !!}
                 @lang('global.create_resource_here')
             </div>
         @endif
 
         @if (evo()->hasPermission('edit_document'))
             <div class="menuLink" id="item2" onclick="directory.menuHandler(2);">
-                <i class="fa fa-edit"></i>
+                {!! svg('tabler-edit')->toHtml() !!}
                 @lang('global.edit_resource')
             </div>
         @endif
 
         @if (evo()->hasPermission('save_document'))
             <div class="menuLink" id="item5" onclick="directory.menuHandler(5);">
-                <i class="fa fa-arrows"></i>
+                {!! svg('tabler-arrows-move')->toHtml() !!}
                 @lang('global.move_resource')
             </div>
         @endif
 
         @if (evo()->hasPermission('new_document'))
             <div class="menuLink" id="item7" onclick="directory.menuHandler(7);">
-                <i class="fa fa-clone"></i>
+                {!! svg('tabler-copy')->toHtml() !!}
                 @lang('global.resource_duplicate')
             </div>
         @endif
 
         @if (evo()->hasPermission('edit_document') && evo()->hasPermission('save_document'))
             <div class="menuLink" id="item11" onclick="directory.menuHandler(11);">
-                <i class="fa fa-sort-numeric-asc"></i>
+                {!! svg('tabler-sort-ascending-numbers')->toHtml() !!}
                 @lang('global.sort_menuindex')
             </div>
         @endif
@@ -234,24 +234,24 @@
 
         @if (evo()->hasPermission('publish_document'))
             <div class="menuLink" id="item9" onclick="directory.menuHandler(9);" style="display: none;">
-                <i class="fa fa-check"></i>
+                {!! svg('tabler-check')->toHtml() !!}
                 @lang('global.publish_resource')
             </div>
 
             <div class="menuLink" id="item10" onclick="directory.menuHandler(10);" style="display: block;">
-                <i class="fa fa-close"></i>
+                {!! svg('tabler-x')->toHtml() !!}
                 @lang('global.unpublish_resource')
             </div>
         @endif
 
         @if (evo()->hasPermission('delete_document'))
             <div class="menuLink" id="item4" onclick="directory.menuHandler(4);" style="display: block;">
-                <i class="fa fa-trash"></i>
+                {!! svg('tabler-trash')->toHtml() !!}
                 @lang('global.delete_resource')
             </div>
 
             <div class="menuLink" id="item8" onclick="directory.menuHandler(8);" style="display: none;">
-                <i class="fa fa-undo"></i>
+                {!! svg('tabler-restore')->toHtml() !!}
                 @lang('global.undelete_resource')
             </div>
         @endif
@@ -260,7 +260,7 @@
 
         @if (evo()->hasPermission('new_document'))
             <div class="menuLink" id="item6" onclick="directory.menuHandler(6);">
-                <i class="fa fa-link"></i>
+                {!! svg('tabler-link')->toHtml() !!}
                 @lang('global.create_weblink_here')
             </div>
         @endif
@@ -269,13 +269,13 @@
 
         @if (evo()->hasPermission('view_document'))
             <div class="menuLink" id="item1" onclick="directory.menuHandler(1);">
-                <i class="fa fa-info"></i>
+                {!! svg('tabler-info-circle')->toHtml() !!}
                 @lang('global.resource_overview')
             </div>
         @endif
 
         <div class="menuLink" id="item12" onclick="directory.menuHandler(12);">
-            <i class="fa fa-eye"></i>
+            {!! svg('tabler-eye')->toHtml() !!}
             @lang('global.preview_resource')
         </div>
     </div>
