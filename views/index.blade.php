@@ -4,7 +4,7 @@
     <div id="actions">
         <div class="btn-group">
             <a href="javascript:;" class="btn btn-success" onclick="location.reload();">
-                <i class="fa fa-refresh"></i><span>@lang('directory::messages.refresh')</span>
+                {!! svg('tabler-refresh')->toHtml() !!}</i><span>@lang('directory::messages.refresh')</span>
             </a>
         </div>
     </div>
