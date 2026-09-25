@@ -234,9 +234,9 @@ class JDirectory
             ],
 
             'tree_config' => [
-                'icon'              => svg('tabler-list')->toHtml(),
-                'icon_folder_open'  => svg('tabler-list')->toHtml(),
-                'icon_folder_close' => svg('tabler-list')->toHtml(),
+                'icon'              => svg('tabler-list-details')->toHtml(),
+                'icon_folder_open'  => svg('tabler-list-details')->toHtml(),
+                'icon_folder_close' => svg('tabler-list-details')->toHtml(),
             ],
 
             'columns' => [
