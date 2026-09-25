@@ -2,7 +2,7 @@
 
 <div class="directory-page">
     <h1>
-        <i class="fa fa-list"></i>
+        {!! svg('tabler-list')->toHtml() !!}
         @yield('pagetitle', __('directory::global.main_caption'))
     </h1>
 
